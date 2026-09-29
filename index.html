@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Simulado • Neurologia + Geriatria</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- DECORAÇÃO DO FUNDO -->
+    <div class="background-decoration decoration-one"></div>
+    <div class="background-decoration decoration-two"></div>
+    <div class="background-decoration decoration-three"></div>
+
+
+    <!-- =====================================================
+         TELA INICIAL
+    ====================================================== -->
+
+    <main id="inicio" class="screen active">
+
+        <div class="welcome-wrapper">
+
+            <div class="welcome-card">
+
+                <div class="brand-mark">
+                    <span>NG</span>
+                </div>
+
+                <div class="eyebrow">
+                    SIMULADO COMPLETO
+                </div>
+
+                <h1>
+                    Neurologia
+                    <span>+</span>
+                    Geriatria
+                </h1>
+
+                <p class="welcome-description">
+                    Um simulado completo para testar seus conhecimentos,
+                    acompanhar seu desempenho e revisar seus principais erros.
+                </p>
+
+
+                <div class="stats-row">
+
+                    <div class="stat">
+                        <strong>70</strong>
+                        <span>questões</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div class="stat">
+                        <strong>35 + 35</strong>
+                        <span>temas</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div class="stat">
+                        <strong>60</strong>
+                        <span>minutos</span>
+                    </div>
+
+                </div>
+
+
+                <div class="subject-preview">
+
+                    <div class="subject">
+                        <div class="subject-icon">🧠</div>
+
+                        <div>
+                            <strong>Neurologia</strong>
+                            <span>35 questões</span>
+                        </div>
+                    </div>
+
+                    <div class="subject">
+                        <div class="subject-icon">🤎</div>
+
+                        <div>
+                            <strong>Geriatria</strong>
+                            <span>35 questões</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="timer-choice">
+
+                    <div>
+                        <strong>Cronômetro</strong>
+
+                        <span>
+                            Você pode fazer com ou sem tempo.
+                        </span>
+                    </div>
+
+                    <label class="switch">
+                        <input
+                            type="checkbox"
+                            id="timerToggle"
+                        >
+
+                        <span class="slider"></span>
+                    </label>
+
+                </div>
+
+
+                <button
+                    id="btnIniciar"
+                    class="primary-button"
+                >
+                    <span>Começar simulado</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+
+                <p class="small-note">
+                    1 ponto por questão correta • máximo de 70 pontos
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         TELA DO SIMULADO
+    ====================================================== -->
+
+    <main id="simulado" class="screen">
+
+        <header class="quiz-header">
+
+            <div class="header-brand">
+
+                <div class="mini-logo">
+                    NG
+                </div>
+
+                <div>
+                    <strong>Neurologia + Geriatria</strong>
+                    <span>Simulado completo</span>
+                </div>
+
+            </div>
+
+
+            <div class="header-center">
+
+                <span class="progress-label">
+                    QUESTÃO
+                </span>
+
+                <strong id="numeroQuestao">
+                    01 / 70
+                </strong>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="score-box">
+
+                    <span>PONTOS</span>
+
+                    <strong id="pontuacao">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="timer"
+                    class="timer-box"
+                >
+                    <span class="timer-icon">◷</span>
+                    <span id="timerText">60:00</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <div class="main-content">
+
+            <!-- BARRA DE PROGRESSO -->
+
+            <div class="progress-area">
+
+                <div class="progress-info">
+
+                    <span id="progressText">
+                        1 de 70
+                    </span>
+
+                    <span id="categoryText">
+                        Neurologia
+                    </span>
+
+                </div>
+
+                <div class="progress-track">
+
+                    <div
+                        id="progressBar"
+                        class="progress-bar"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUESTÃO -->
+
+            <section
+                id="areaQuestao"
+                class="question-card"
+            >
+
+                <div class="question-top">
+
+                    <div class="question-number">
+                        <span id="questionNumberCircle">
+                            01
+                        </span>
+                    </div>
+
+                    <div class="question-category">
+                        NEUROLOGIA
+                    </div>
+
+                </div>
+
+
+                <div class="question-heading">
+
+                    <span class="question-kicker">
+                        Questão
+                    </span>
+
+                    <h2 id="tituloQuestao">
+                        Raciocínio neurológico
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="pergunta"
+                    class="question-text"
+                ></div>
+
+
+                <div
+                    id="alternativas"
+                    class="alternatives"
+                ></div>
+
+
+                <div
+                    id="feedback"
+                    class="feedback"
+                ></div>
+
+            </section>
+
+
+
+            <!-- NAVEGAÇÃO -->
+
+            <div class="navigation">
+
+                <button
+                    id="btnVoltar"
+                    class="secondary-button"
+                >
+                    <span>←</span>
+                    Voltar
+                </button>
+
+
+                <div class="question-counter">
+                    <span id="answeredCounter">0</span>
+                    respondidas
+                </div>
+
+
+                <button
+                    id="btnAvancar"
+                    class="primary-button next-button"
+                >
+                    Avançar
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         RESULTADO
+    ====================================================== -->
+
+    <main id="resultado" class="screen">
+
+        <div class="result-wrapper">
+
+            <div class="result-card">
+
+                <div class="result-icon">
+                    ✓
+                </div>
+
+                <span class="result-kicker">
+                    SIMULADO FINALIZADO
+                </span>
+
+                <h1>
+                    Seu resultado
+                </h1>
+
+                <p class="result-message">
+                    Você concluiu as 70 questões.
+                    Veja abaixo como foi seu desempenho.
+                </p>
+
+
+                <div class="result-score">
+
+                    <span>
+                        Pontuação
+                    </span>
+
+                    <strong id="resultadoPontuacao">
+                        0 / 70
+                    </strong>
+
+                </div>
+
+
+                <div class="result-grid">
+
+                    <div class="result-stat">
+
+                        <span class="result-stat-icon success">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong id="resultadoAcertos">
+                                0
+                            </strong>
+
+                            <span>
+                                acertos
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-stat">
+
+                        <span class="result-stat-icon error">
+                            ×
+                        </span>
+
+                        <div>
+                            <strong id="resultadoErros">
+                                0
+                            </strong>
+
+                            <span>
+                                erros
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-stat">
+
+                        <span class="result-stat-icon percentage">
+                            %
+                        </span>
+
+                        <div>
+                            <strong id="resultadoPercentual">
+                                0%
+                            </strong>
+
+                            <span>
+                                aproveitamento
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-section">
+
+                    <div class="review-title">
+                        Revisão das questões
+                    </div>
+
+                    <div id="revisao"></div>
+
+                </div>
+
+
+                <button
+                    id="btnReiniciar"
+                    class="primary-button restart-button"
+                >
+                    Fazer novamente
+                    <span>↻</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
